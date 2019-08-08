@@ -1,0 +1,10 @@
+@import '../../styles/variables.scss';
+
+.main-sections_container {
+    box-shadow: -5px -2px 15px 6px rgba(0,0,0,0.45);
+    position: relative;
+    z-index: 0;
+    border-top: 1px solid rgba($dark000, .27);
+    background-color: rgba($dark000, .6);
+}
+

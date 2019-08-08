@@ -1,0 +1,48 @@
+@import '../../styles/variables.scss';
+
+.main-background {
+    position: fixed;
+    z-index: -5;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: $main-accent-color;
+    background-image: url("../../assets/CB_radio_Mike_Basgrow_small.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+
+    &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        content: "";
+        z-index: 1;
+        background-color: rgba($opacityDark, .5);
+        background-image: url('../../assets/CB_radio_Mike_Basgrow_small.png');
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        /* Fallback to SVG filters */
+        filter: url('#blur');
+        filter: blur(10px);
+    }
+
+    &::after {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        content: "";
+        z-index: 1;
+        opacity: .4;
+        background-image: url('../../assets/textures/tile-transparent.png');
+    }
+}

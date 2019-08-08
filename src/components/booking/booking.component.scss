@@ -1,0 +1,217 @@
+@import '../../styles/breakpoints.scss';
+@import '../../styles/variables.scss';
+
+@mixin social {
+    .social-link {
+        display: flex;
+        align-items: center;
+        height: 50px;
+
+        .social-link-icon {
+            height: 30px;
+        }
+    }
+}
+
+.booking_container {
+    position: relative;
+    z-index: 5;
+    min-height: 100vh;
+    height: 100vh;
+    background-color: rgba($dark000, .55);
+    box-shadow: 0px 0px 5px 0px rgba($dark000, 0.75);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .booking-info_wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+
+        .booking-info_text {
+            color: $whitefff;
+            padding: 15px 35px;
+            text-align: right;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+
+            h1 {
+                margin-bottom: 15px;
+                font-size: 5rem;
+                font-weight: 800;
+                line-height: 5rem;
+                // padding-bottom: 23px;
+                // border-bottom: 1px solid $whitefff;
+                position: relative;
+
+                @media only screen and (orientation: landscape) and (max-width: $md) {
+                    border-bottom: none;
+                    &::before {
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        height: 1px;
+                        width: 15%;
+                        content: "";
+                        transform: translate(-50%, 0);
+                        background-color: $whitefff;
+                    }
+                }
+            }
+
+            a {
+                color: $whitefff;
+                text-decoration: none;
+                margin: 10px 0;
+                font-size: 16px;
+                font-weight: 200;
+            }
+
+            @media only screen and (orientation: landscape) and (max-width: $md) {
+                padding: 35px;
+            }
+        }
+
+        .booking-info_video {
+
+            @media only screen and (orientation: landscape) and (max-width: $md) {
+                margin-bottom: 15px;
+            }
+        }
+
+        .booking-info_text-right {
+            color: $whitefff;
+            display: flex;
+            flex-direction: column;
+            padding: 15px 35px;
+            text-align: center;
+
+            h1 {
+                margin-bottom: 15px;
+                font-weight: 300;
+                padding-bottom: 23px;
+                border-bottom: 1px solid $whitefff;
+            }
+
+            a {
+                color: $whitefff;
+                text-decoration: none;
+                margin: 10px 0;
+                font-size: 16px;
+                font-weight: 200;
+            }
+        }
+
+        @media only screen and (orientation: portrait) {
+            flex-direction: column;
+
+            .booking-info_text {
+                text-align: center;
+                height: 50%;
+            }
+
+            .booking-info_video {
+                width: 100%;
+                height: 50%;
+
+                iframe {
+                    width: 100vw;
+                    height: calc(100vw / 1.79);
+                }
+            }
+        }
+
+        @media only screen and (orientation: landscape) and (max-width: $md) {
+            flex-direction: column;
+            
+            .booking-info_text {
+                text-align: center;
+            }
+    
+            .booking-info_video {
+                width: 100%;
+                iframe {
+                    width: 100vw;
+                    height: calc(100vw / 1.79);
+                }
+            }
+        }
+    }
+
+    // graphic
+
+    .graphic-studio-social {
+        align-self: flex-start;
+
+        @include social();
+        margin-left: 4rem;
+        .social-link {
+            position: relative;
+            &:hover {
+                &::after {
+                    opacity: 1;
+                    transition: opacity .6s;
+                }
+            }
+
+            &::after {
+                opacity: 0;
+                position: absolute;
+                height: 30px;
+                width: 300%;
+                content: "crafted with";
+                background-image: url('../../assets/svg/heart.svg');    
+                background-repeat: no-repeat;
+                background-position: right bottom;
+                background-size: 20%;
+                transition: opacity .4s;
+                color: $whitefff;
+                letter-spacing: .6px;
+                top: 12px;
+                left: 33px;
+                display: flex;
+                align-items: flex-end;
+            }
+
+
+            .social-link-icon {
+                border-radius: 50%;
+            }
+        }
+    }
+
+    .art-wrapper-footer {
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        height: 40px;
+        width: auto;
+
+        @media only screen and (orientation: landscape) and (max-width: $md) {
+            bottom: 8px;
+        }
+
+        .art-logo-animation {
+            height: 100%;
+
+            img {
+                cursor: pointer;
+                height: 100%;
+                transition: all .5s;
+            }
+        }
+    }
+
+    @media only screen and (orientation: landscape) and (max-width: $md) {
+        height: auto;
+    }
+
+}

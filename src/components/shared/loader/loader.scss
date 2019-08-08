@@ -1,0 +1,44 @@
+@import './../../../styles/variables.scss';
+@import './../../../styles/breakpoints.scss';
+
+.loader_container {
+    position: relative;
+    z-index: 1;
+    min-height: 50%;
+    width: 100%;
+    background-color: rgba($dark000, .9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::after {
+        position: absolute;
+        z-index: 0;
+        left: 0;
+        top: 0;
+        content: "";
+        height: 100%;
+        width: 100%;
+        background-image: url('../../../assets/textures/grain.png');
+        opacity: .08;
+    }
+
+    .loader_img {
+        margin-top: 1.5rem;
+        width: 45%;
+
+        @media only screen and (max-width: $md) {
+            width: 70%;
+        }
+    }
+
+    .arrow_img {
+        position: absolute;
+        z-index: 1;
+        left: 50%;
+        top: calc(100% - 2.5rem);
+        width: 3rem;
+        transform: translate(-50%, -50%);
+
+    }
+}

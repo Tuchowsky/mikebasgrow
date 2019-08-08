@@ -1,0 +1,25 @@
+@import './../../styles/variables.scss';
+@import './../../styles/breakpoints.scss';
+
+.blog_container {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    background-color: $dark000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 7rem;
+
+    .blog_wrapper {
+        width: 70vw;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        @media only screen and (max-width: $sm) {
+            flex-direction: column;
+            width: 100%;
+        }
+    }
+}

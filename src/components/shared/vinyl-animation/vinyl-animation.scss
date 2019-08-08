@@ -1,0 +1,101 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/shadows.scss';
+@import '../../../styles/mixins.scss';
+@import '../../../styles/breakpoints.scss';
+
+
+.vinyl {
+    z-index: 20;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto 7rem auto;
+    
+
+    .vinyl-animation_container {
+        position: relative;
+        z-index: 5;
+        width: 10rem;
+        color: #fff;
+        margin-bottom: -9rem;
+        transition: all .5s ease-out;
+        cursor: pointer;
+        @include no-tap();
+
+    
+        .vinyl-animation_wrapper {
+            height: 10rem;
+            width: 10rem;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform-origin: center;
+            transform: translate(0%, 0%) rotate(0deg);
+            animation: rotate 7s linear infinite;
+
+            @media only screen and (max-width: $sm) {
+                height: 9rem;
+                width: 9rem;
+                left: .8rem;
+            }
+
+            @keyframes rotate-backwards {
+                0% {
+                    transform: translate(0%, 0%) rotate(-360deg);
+                }
+                100% {
+                    transform: translate(0%, 0%) rotate(-370deg);
+                }
+            }
+        
+            &:hover {
+                transform: translate(0%, 0%) rotate(-10deg);
+        
+                animation: rotate-backwards 2s forwards;
+                transition: all .6s;
+            }
+        
+        }
+        
+        @keyframes rotate {
+            100% {
+                transform: translate(0%, 0%) rotate(360deg);
+            }
+        }
+
+        &:last-child {
+
+            .vinyl-animation_wrapper {
+                right: 0;
+                left: auto;
+
+                @media only screen and (max-width: $sm) {
+                    right: .8rem;
+                }
+            }
+
+        }
+    }
+    .mixer {
+        z-index: 1;
+        height: 10rem;
+        width: 10rem;
+        margin: 0 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media only screen and (max-width: $sm) {
+            height: 9rem;
+            width: 9rem;
+        }
+
+
+        img {
+            height: 100%;
+            width: auto;
+        }
+    
+    }
+}

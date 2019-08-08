@@ -1,0 +1,81 @@
+@import './../../../styles/variables.scss';
+@import './../../../styles/mixins.scss';
+
+@mixin link {
+    position: relative;
+    z-index: 1;
+    display: block;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-size: 1.3rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all .5s;
+    @include no-tap();
+
+    &::after {
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        left: 50%;
+        top: 105%;
+        transform: translate(-50%, 0);
+        transition: all .5s;
+        content: "";
+    }
+    
+    &:hover {
+        color: $main-accent-color;
+        &::after {
+            background-color: $main-accent-color;
+        }
+    }
+}
+
+.link-art-dark {
+    @include link;
+    position: relative;
+    color: $dark111;
+    font-weight: bold;
+    &::after {
+        background-color: $dark111;
+    }
+    &:hover {
+        color: $secondary-accent-color;
+        &::after {
+            transition: all .5s;
+            background-color: $secondary-accent-color;
+        }
+    }
+}
+
+.link-art-light {
+    @include link;
+    position: relative;
+    color: $whitefff;
+
+    &::after {
+        background-color: $whitefff;
+    }
+}
+
+.link-art-accent {
+    @include link;
+    position: relative;
+    color: $whitefff;
+
+    &::after {
+        background-color: $main-accent-color;
+        background-color: $main-accent-color;
+    }
+
+    &:hover {
+        color: $main-accent-color;
+
+        &::after {
+            width: 160px;
+            transition: all .5s;
+            background-color: $main-accent-color;
+        }
+    }
+}

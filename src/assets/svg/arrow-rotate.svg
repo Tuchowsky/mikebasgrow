@@ -1,0 +1,73 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33.02 32.09">
+    <defs>
+        <style>
+            .cls-1,.cls-2{
+                fill:none;
+                stroke:#fff;
+            }
+            .cls-1{
+                stroke-width:0.91px;
+                stroke-dasharray:90.54;
+                animation: draw-arrow 15.5s cubic-bezier(1, 0, 0, 1) forwards infinite;
+            }
+            .cls-2{
+                stroke-width:1.06px;
+                stroke-dasharray:106.28;
+                animation: draw-sign 15.5s cubic-bezier(1, 0, 0, 1) forwards infinite;
+            }
+
+            @keyframes draw-sign {
+                0% {
+                    stroke-dashoffset: -100;
+                    fill: transparent;
+                }
+
+                10% {
+                    stroke-dashoffset: 0;
+                }
+
+                90% {
+                    stroke-dashoffset: 0;
+                }
+
+                95% {
+                    stroke-dashoffset: 110;
+                }
+
+                100% {
+                    stroke-dashoffset: 110;
+                }
+            }
+            @keyframes draw-arrow {
+                0% {
+                    stroke-dashoffset: -50;
+                    fill: transparent;
+                }
+
+                10% {
+                    stroke-dashoffset: 0;
+                }
+
+                90% {
+                    stroke-dashoffset: 0;
+                }
+
+                98% {
+                    stroke-dashoffset: 100;
+                }
+
+                100% {
+                    stroke-dashoffset: 100;
+                }
+            }
+        </style>
+    </defs>
+<title>arrow-rotate</title>
+    <g id="rotate">
+        <path class="cls-1" d="M15.46,11.21,5.84,15,4,4.86" transform="translate(-3.53 -3.95)"/>
+        <path class="cls-2" d="M6,15a23,23,0,0,1,2.55-4.8A15.34,15.34,0,0,1,28,6.45,15.5,15.5,0,1,1,10.91,32.18" transform="translate(-3.53 -3.95)"/>
+    </g>
+</svg>
+<!-- Hi! This SVG animation is created by ArtskyStudio. Feel free to use it :) If you like this kind of animations and want to explore more check out my
+    fanpage https://www.facebook.com/artskyStudioWorkspace and like my page to motivate me to create more :) 
+ -->

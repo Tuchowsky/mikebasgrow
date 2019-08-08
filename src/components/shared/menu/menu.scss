@@ -1,0 +1,155 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/breakpoints.scss';
+
+.menu_container {
+    position: fixed;
+    z-index: 1;
+    pointer-events: all;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    width: 34rem;
+    background-color: $whitefff;
+    transition: right .5s;
+
+    @media only screen and (max-width: $lg) and (orientation: landscape) {
+        width: 100%;
+        padding-left: 2.5rem;
+    }
+
+    &::after {
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        content: "";
+        height: 100%;
+        width: 100%;
+        background-image: url('../../../assets/textures/grain.png');
+        opacity: .4;
+    }
+
+
+    .menu-backdrop {
+        position: fixed;
+        z-index: -1;
+        right: 0;
+        top: 0;
+        width: 0;
+        height: 100vh;
+        transition: all .5s;
+        background-color: rgba($dark111, .1);
+        border-radius: 65%;
+    }
+
+    .menu-list {
+        position: relative;
+        z-index: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        list-style: none;
+        text-align: left;
+        padding-left: 4rem;
+        background-color: rgba($whitefff, .8);
+        -webkit-tap-highlight-color: rgba($dark000,0);
+
+        .menu-list-item {
+            position: relative;
+            font-size: 3.2rem;
+            padding: 1rem 0;
+            cursor: pointer;
+            -webkit-tap-highlight-color: rgba($dark000,0);
+            text-decoration: none;
+
+            @media only screen and (max-width: $lg) and (orientation: landscape) {
+                font-size: 3rem;
+                line-height: 3rem;
+                padding: .5rem 0;
+            }
+
+            @media only screen and (max-width: $sm) and (orientation: landscape) {
+                font-size: 2.5rem;
+                line-height: 2.5rem;
+            }
+
+            &::after {
+                position: absolute;
+                content: "";
+                right: 0;
+                top: 50%;
+                width: 0;
+                height: 0;
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+                background-color: $main-accent-color;
+                transition: all 1.22s;
+            }
+
+            &:hover {
+                &::before {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    border-radius: 50%;
+                }
+                &::after {
+                    right: 3.5rem;
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    border-radius: 50%;
+                    transition: all .5s;
+                }
+            }
+
+            .menu-list-link {
+                text-decoration: none;
+                color: $dark111;
+                transition: all .5s;
+                font-weight: 800;
+                letter-spacing: .3rem;
+
+                &:hover {
+                    transition: all .5s;
+                    text-shadow:
+                    1px 1px 0 rgba($main-accent-color, .3),
+                    1px 1px 4px rgba($dark111, .5),
+                }
+            }
+
+            .pointer-disabled {
+                pointer-events: none;
+                text-decoration: none;
+            }
+        }
+
+        .gallery_btn {
+            &:hover {
+                transition: all .5s;
+                text-shadow:
+                1px 1px 0 rgba($main-accent-color, .3),
+                1px 1px 4px rgba($dark111, .5),
+
+            }
+        }
+    }
+}
+
+.menu-open {
+    right: 0;
+
+    .menu-backdrop {
+        width: 100vw;
+        transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+        background-color: rgba($dark111, .5);
+        border-radius: 0;
+    }
+}
+
+.menu-closed {
+    right: -340px;
+
+    @media only screen and (max-width: $lg) and (orientation: landscape) {
+        right: -100%;
+    }
+}

@@ -1,0 +1,17 @@
+@import './styles/global.scss';
+@import './styles/variables.scss';
+@import './styles/shadows.scss';
+
+
+.home-welcome_mask {
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-image: url("./assets/CB_radio_Mike_Basgrow_small.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

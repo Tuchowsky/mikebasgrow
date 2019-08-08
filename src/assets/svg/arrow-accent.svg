@@ -1,0 +1,36 @@
+<svg width="17" height="10" viewBox="0 0 17 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+    <style>
+        .arrow {
+            stroke: #F95C33;
+            stroke-dasharray: 100;
+            stroke-dashoffset: 0;
+
+            animation: draw-sign 9.5s cubic-bezier(1, 0, 0, 1) forwards infinite;
+          
+        }
+
+
+        @keyframes draw-sign {
+            0% {
+                stroke-dashoffset: -25;
+                fill: transparent;
+            }
+
+            43% {
+                stroke-dashoffset: -25;
+                fill: transparent;
+            }
+
+            100% {
+                stroke-dashoffset: 100;
+            }
+        }
+    </style>
+</defs>
+
+    <path class="arrow" d="M16.5 1L8.5 9L0.5 1"/>
+</svg>
+<!-- Hi! This SVG animation is created by ArtskyStudio. Feel free to use it :) If you like this kind of animations and want to explore more check out my
+    fanpage https://www.facebook.com/artskyStudioWorkspace and like my page to motivate me to create more :) 
+ -->

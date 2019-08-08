@@ -1,0 +1,116 @@
+
+@import './../../../styles/variables.scss';
+@import '../../../styles/shadows.scss';
+@import '../../../styles/mixins.scss';
+
+@mixin button {
+    position: relative;
+    z-index: 1;
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    transition: all .5s;
+    margin: 0 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.3rem;
+    padding: 1rem 6rem;
+    @include no-tap();
+    cursor: pointer;
+}
+
+
+.button-art-dark {
+    @include button;
+    background-color: $dark000;
+    color: $whitefff;
+    padding: 1.2rem 2.1rem;
+    letter-spacing: .8px;
+    @include shadow28;
+    &:hover {
+        transition: all 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+        box-shadow: none;
+        text-shadow: 0px 2px 1px rgba($main-accent-color, .1), 0 0 0 $dark000, 0px 2px 1px rgba($main-accent-color, .1);
+        
+        &::after {
+            opacity: 0;
+            transform: scale(1.2);
+            transition: all 1.4s ease-out;
+
+        }
+    }
+
+    &::after {
+        transform: scale(1);
+        opacity: .45;
+        position: absolute;
+        z-index: -1;
+        pointer-events: none;
+        background-color: rgba($dark000, 1);
+        left: 0;
+        top: 0;
+        height: 100%;;
+        width: 100%;
+        content: "";
+
+    }
+}
+
+.button-art-light {
+    @include button;
+    background-color: $whitefff;
+    color: $dark000;
+    @include shadow28;
+    &:hover {
+        color: $main-accent-color;
+        transition: all .5s;
+    }
+}
+
+.button-art-accent {
+    @include button;
+    background-color: $main-accent-color;
+    color: $dark000;
+    text-transform: uppercase;
+    color: $whitefff;
+    padding: 1.2rem 7.5rem;
+
+}
+
+.button-art-transparent {
+    @include button;
+    background-color: transparent;
+    margin-bottom: -2.2rem;
+    color: $main-accent-color;
+
+    &::after {
+        position: absolute;
+        z-index: -1;
+        height: 0;
+        width: 100%;
+        left: 0;
+        top: 50%;
+        content: "";
+        background-image: url("../../../assets/svg/arrow.svg");
+        background-position: center 100%;
+        background-size: 5rem;
+        background-repeat: no-repeat;
+        opacity: 0;
+        transition: all .5s;
+        transform-origin: center;
+    }
+
+    &:hover {
+        color: $secondary-accent-color;
+        padding-bottom: 4rem;
+        font-size: 2.4rem;
+
+        &::after {
+            top: -5%;
+            height: 100%;
+            opacity: 1;
+        }
+    }
+
+}

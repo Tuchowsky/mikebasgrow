@@ -1,0 +1,130 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/shadows.scss';
+
+$item-container-height-medium: 230px;
+$item-container-width-meidum: 280px;
+
+$item-container-height-large: 456px;
+$item-container-width-large: calc(100vh - 40px);
+
+$item-photo-size: 80px;
+
+
+@mixin text-item-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+
+.text-item-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+    .text-item-container {
+        @include shadow28;
+        // background: hsla(12, 93%, 59%, .3);
+    
+        .text-item_photo {
+            height: $item-photo-size;
+            width: $item-photo-size;
+            object-fit: cover;
+            // border-radius: 50%;
+            margin-bottom: 15px;
+        }
+    
+        .text-item_header-text {
+            margin-bottom: 15px;
+        }
+
+        &::before {
+            position: absolute;
+            content: "";
+           // background-color: $secondary-accent-color;
+
+            z-index: -1;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            // filter: blur(20px);
+            // opacity: .5;
+            // background-color: red;
+           // filter: blur(50px);
+        }
+    }
+
+    .art-mask {
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+
+    }
+
+    // color sytling
+    .bg-dark {
+        background-color: rgba($dark222, 1);
+        color: $whitefff;
+
+        &:nth-child(odd) {
+
+        }
+    }
+
+    .bg-light {
+        background-color: $whiteeee;
+        color: $dark222;
+        background: rgba($main-accent-color, .7);
+        // background-color: rgba(248, 93, 53, .4);
+        // -webkit-backdrop-filter: blur(2em);
+        // backdrop-filter: blur(2em);
+        color: $whitefff;
+    
+        // background-image: url("../../../assets/textures/texture-orange.png");
+
+        &:nth-child(even)  {
+            background-color: $dark222;
+            color: $whitefff;
+            background-image: none;
+        }
+    }
+
+    .item-container_medium {
+        @include text-item-container;
+        align-items: center;
+        justify-content: flex-start;
+        max-width: $item-container-width-meidum;
+        text-align: center;
+        margin: 35px 20px;
+        padding: 20px;
+    }
+    // size styling;
+    .item-container_large {
+        @include text-item-container;
+        align-items: flex-start;
+        justify-content: flex-end;
+        max-width: $item-container-width-large;
+        padding: 20px;
+        text-align: left;
+        margin: 35px 20px;
+        padding: 40px;
+
+        &:nth-child(even) {
+            align-items: flex-end;
+        }
+
+    }
+}
+
+//flex order 
+.order-revert {
+    flex-direction: row-reverse;
+} 

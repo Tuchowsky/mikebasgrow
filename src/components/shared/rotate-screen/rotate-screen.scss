@@ -1,0 +1,29 @@
+@import './../../../styles/variables.scss';
+
+.rotate-screen {
+    position: fixed;
+    z-index: 1;
+    top: 3.5rem;
+    right: 2rem;
+    max-width: 10rem;
+    color: $whitefff;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: all .3s;
+
+    @media only screen and (orientation: portrait) {
+        opacity: 1;
+        transition: all .3s;
+    }
+    
+    .rotate-screen_text {
+        line-height: 1.4rem;
+    }
+
+    .rotate-screen_icon {
+        height: 4rem;
+        margin-bottom: 2rem;
+    }
+}

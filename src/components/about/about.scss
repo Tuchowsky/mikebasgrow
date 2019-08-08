@@ -1,0 +1,246 @@
+@import './../../styles/variables.scss';
+@import './../../styles/breakpoints.scss';
+
+@mixin afterMixin {
+    position: absolute;
+    z-index: 1;
+    content: "";
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transition: all .5s;
+}
+
+
+.about_conainer {
+    // background-color: $dark111;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 10rem 2rem 0 2rem;
+    transition: all .5s;
+    overflow-x: hidden;
+
+    &::after {
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        content: "";
+        opacity: .75;
+        background-color: $dark111;
+    }
+
+    @media only screen and (max-width: $xl) and (orientation: portrait) {
+        min-height: auto;
+    }
+    
+
+    .about-name_container {
+        width: 35rem;
+        margin-bottom: 7rem;
+
+        @media only screen and (max-width: $sm) {
+            max-width: calc(100vw - 10rem);
+        }
+    }
+
+    .about-bio_container {
+        color: $whitefff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        white-space: pre-wrap;
+        @media only screen and (max-width: 360px) {
+            width: 100%;
+        }
+        
+        .about-bio_head {
+            max-width: 35rem;
+            font-size: 2rem;
+            line-height: 3.2rem;
+            text-align: center;
+            font-weight: 400;
+            margin-bottom: 3.5rem;
+            letter-spacing: .1rem;
+        }
+        
+        .about-bio_quote-wrapper {
+            max-width: 70rem;
+            letter-spacing: .05rem;
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 3.5rem;
+
+            @media only screen and (max-width: $md) {
+                flex-direction: column;
+                margin-bottom: 0;
+            }
+           
+            @media only screen and (max-width: $lg) and (orientation: landscape) {
+                max-width: calc(100vw - 16rem);
+            }
+                 
+            .about-bio_quote {
+                padding: 0 2rem;
+                max-width: 35rem;
+
+                @media only screen and (max-width: $md) {
+                    margin-bottom: 3.5rem;
+                }
+
+                @media only screen and (max-width: 360px) {
+                    padding: 0;
+                }
+
+                &:nth-child(odd) {
+                    text-align: right;
+                }
+            }   
+        }
+
+        .about-bio_animation {
+            height: 2.2rem;
+            margin-bottom: 5rem;
+            .art-logo-animation {
+                width: 8rem;
+            }
+    
+            .link {
+                min-width: 100%;
+            }
+        }
+        .about-bio_sub-quote-container {
+            height: 45rem;
+            position: relative;
+            z-index: 0;
+            max-height: 45rem;
+            width: 100vw;
+            background-image: url('../../assets/MikeBasgrowHome/05_Mike_Basgrow_Tymek_FND_Wroclaw_compressed_Artsky_Studio.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 3rem;
+            transition: all .5s;
+
+            @media only screen and (max-width: $md) {
+                background-attachment: scroll;
+            }
+            
+            &::after {
+                @include afterMixin();
+                z-index: 0;
+                background-color: rgba($dark111, .6);
+            }
+
+            @media only screen and (max-width: $md) and (orientation: landscape) {
+                justify-content: center;
+                min-height: 100vh;
+            }
+
+
+            .about-bio_sub-quote-wrapper {
+                max-width: 70rem;
+                padding: 0 2rem;
+                overflow: auto;
+                max-height: 45rem;
+
+                @media only screen and (max-width: $lg) and (orientation: landscape) {
+                    max-width: calc(100vw - 11rem);
+                }
+    
+                .about-bio_sub-quote {
+                    text-align: justify;
+                    margin-bottom: 3.5rem;
+
+                    @media only screen and (max-width: $lg) {
+                        padding: 0 3rem;
+                    }
+                   
+                    @media only screen and (max-width: 360px) {
+                        padding: 0;
+                    }
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            .link {
+                margin: 3.5rem 0;
+                min-width: auto;
+                transition: all .6s;
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.box-open {
+    position: relative;
+    z-index: 1;
+    opacity: 1;
+    transform: scale(1);
+    transition: all .3s ease;
+    max-height: 50rem;
+    transform-origin: top;
+
+
+    .box-element {
+        // margin-top: 0;
+        // transition: margin-top .3s;
+    }
+}
+
+.box-closed {
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    transform: scale(0);
+    transition: all .3s ease;
+    max-height: 0;
+    transform-origin: top;
+
+    .box-element {
+    }
+}
+
+
+
+.dark-mask {
+    position: relative;
+    z-index: 0;
+    transition: all .5s;
+    background-size: 150%;
+
+    &::after {
+        @include afterMixin();
+        z-index: 0;
+        background-color: rgba($dark111, 1);
+    }
+}
+
+.light-mask {
+    position: relative;
+    z-index: 0;
+    transition: all .5s;
+
+    // &::after {
+    //     @include afterMixin();
+    //     background-color: rgba($dark111, .6);
+    // }
+}

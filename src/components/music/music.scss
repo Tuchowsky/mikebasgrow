@@ -1,0 +1,184 @@
+@import './../../styles/variables.scss';
+@import './../../styles/breakpoints.scss';
+@import './../../styles/shadows.scss';
+
+$video-width: 70vw;
+$video-heigth: 35vw;
+$padding: calc((100vw - 70vw) / 2);
+
+.music_container {
+    position: relative;
+    min-height: 100vh;
+    background-color: $dark000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding-top: 7rem;
+
+    &::after {
+        position: absolute;
+        z-index: 0;
+        left: 0;
+        top: 0;
+        content: "";
+        height: 100%;
+        width: 100%;
+        background-image: url('../../assets/textures/grain.png');
+        opacity: .08;
+    }
+
+    .loading-text {
+        line-height: 5rem;
+        font-size: 4rem;
+        font-weight: 900;
+        color: $whitefff;
+        padding-bottom: 5rem;
+    }
+
+    .music_video-wrapper {
+        position: relative;
+        z-index: 1;
+        left: 0;
+        top: auto;
+        display: flex;
+        flex-direction: row;
+        transition: all .5s;
+        padding: 0 calc((100vw - 70vw) / 2);
+
+        @media only screen and (max-width: $lg) {
+            padding: 0;
+            overflow-x: scroll;
+        }
+        @media only screen and (max-width: $lg) and (orientation: landscape) {
+            padding: 0 calc((100vw - 70vw) / 2);
+        }
+
+        .video-item {
+            margin-right: calc((100vw - 70vw) / 2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            padding-top: 11rem;
+            padding-bottom: 5.5rem;
+            
+            @media only screen and (max-width: $md) and (orientation: portrait) {
+                margin-left: 0;
+            }
+
+            &:last-child {
+                margin-right: 0;
+                padding-right: 0;
+
+                @media only screen and (max-width: $md) and (orientation: portrait) {
+                    margin-right: 0;
+                }
+
+                @media only screen and (max-width: $lg) and (orientation: landscape) {
+                    padding-right: $padding;
+                    .video-item_head-text {
+                        width: 70vw;
+                    }
+                }
+            }
+
+            .video-item_head-text {
+                position: absolute;
+                width: 100%;
+                left: 0;
+                top: 0;
+                text-align: center;
+                color: $whitefff;
+                font-size: 5rem;
+                font-weight: 800;
+                line-height: 5rem;
+
+                @media only screen and (max-width: $md) {
+                    font-size: 4.5rem;
+                    line-height: 5rem;
+                }
+                
+                @media only screen and (max-width: $md) and (orientation: portrait) {
+                    font-size: 3rem;
+                    line-height: 3.5rem;
+                }
+    
+                @media only screen and (max-width: 360px) {
+                    font-size: 3.5rem;
+                    line-height: 4rem;
+                }
+            }
+            .video-iframe {
+                width: $video-width;
+                height: $video-heigth;
+
+                @media only screen and (max-width: $md) and (orientation: portrait) {
+                    width: 100vw;
+                    height: 80vw;
+                }
+            }
+        }
+    }
+
+    .video_navigation {
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: calc(50% + 4.2rem);
+        width: 100%;
+        transform: translate(0, -50%);
+        height: 4.2rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 2.5rem;
+        @media only screen and (max-width: $lg) {
+            display: none;
+        }
+
+        .navigation_item {
+            height: 100%;
+            width: 9rem;
+            position: relative;
+            opacity: 1;
+            transform: scale(1);
+            cursor: pointer;
+            transition: all .4s;
+            margin-left: 2.5rem;
+            &:last-child {
+                margin-right: 2.5rem;
+            }
+
+            .navigation_icon {
+                height: 50%;
+                position: absolute;
+                transform: translate(0, -50%) rotate(0deg);
+                top: 50%;
+                pointer-events: none;   
+            }
+
+            .arrow-left {
+                transform: translate(0, -50%) rotate(90deg);
+                right: 0;
+            }
+
+            .arrow-right {
+                transform: translate(0, -50%) rotate(-90deg);
+                left: 0;
+
+            }
+        }
+
+        .scale-up {
+            transform: scale(1.25);
+            transition: all .2s;
+        }
+
+        .hidden {
+            pointer-events: none;
+            opacity: 0;
+            transition: all .5s;
+        }
+    }
+}

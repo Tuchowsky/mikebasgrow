@@ -1,0 +1,50 @@
+@import '../../../styles/variables.scss';
+
+.background-blur {
+    position: absolute;
+    z-index: -5;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($whitefff, 0.3);
+    background-image: url('../../../assets/textures/tile-transparent.png');
+    background-position: center;
+    background-size: 40%;
+    opacity: .9;
+    /* Fallback to SVG filters */
+    filter: url('#blur');
+    filter: blur(5px);
+
+
+    &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        content: "";
+        z-index: 2;
+        opacity: .7;
+        background-color: $dark111;
+    }
+
+    svg {
+        position: absolute;
+        z-index: -1;
+
+        
+    &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        content: "";
+        z-index: 2;
+        opacity: .7;
+        background-image: url('../../../assets/textures/tile-transparent.png');
+    }
+    }
+
+
+}

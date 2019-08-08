@@ -1,0 +1,41 @@
+@import './../../../styles/breakpoints.scss';
+
+
+.art-logo-right-bottom {
+    position: fixed;
+    z-index: 2;
+    width: 25%;
+    right: 10%;
+    bottom: 7%;
+
+    @media screen and (max-width: $md) {
+        right: 15%;
+        bottom: 16rem;
+        width: 25rem;
+    }
+
+    @media screen and (max-width: $lg) and (orientation: landscape) {
+        right: 10%;
+        bottom: 30%;
+        width: 20rem;
+    }
+
+    @media screen and (max-width: $md) and (orientation: landscape) {
+        right: 10%;
+        bottom: 30%;
+        width: 15rem;
+    }
+
+    @media screen and (min-width: $lg) and (max-width: $xl) {
+        width: 400px;
+        bottom: 20%;
+    }
+}
+
+.art-logo-normal {
+    width: 100%;
+}
+
+.art-logo-animation {
+
+}

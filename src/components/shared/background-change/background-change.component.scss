@@ -1,0 +1,37 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/breakpoints.scss';
+
+.mike-basgrow-story-image-wrapper {
+    position: fixed;
+    z-index: -10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: $dark111;
+    transition: all 1s;
+
+    .story-switch {
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed; 
+        transition: all 2.5s;
+
+        @media only screen and (max-width: $md) {
+            background-attachment: scroll;
+        }
+    }
+
+    .image_00 {
+        transition: all 2.5s;
+    }
+    .image_01 {
+        transition: all 2.5s;
+    }
+
+}

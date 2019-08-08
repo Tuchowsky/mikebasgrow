@@ -1,0 +1,8 @@
+@import '../../styles/variables.scss';
+
+.welcome-sections_container {
+    position: relative;
+    z-index: 0;
+    background-color: $dark111;
+    height: 200%;
+}

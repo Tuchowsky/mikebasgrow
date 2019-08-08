@@ -1,0 +1,127 @@
+<svg id="Logo_Path" data-name="Logo Path" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 388.63 162.92">
+<defs>
+    <style>
+    .sing {
+        fill:none;
+        <!-- stroke:#9e2828; -->
+    
+        stroke-linecap:round;
+        stroke-linejoin:round;
+        stroke-width: 4px;
+
+        animation-duration: 6s; 
+        animation-fill-mode: forwards;
+        animation-timing-function: cubic-bezier(.48,1.86,.86,.74); 
+
+        stroke-miterlimit: 0;
+    }
+
+    .logotype-mike {
+        stroke: #fff;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+
+        animation-name: draw-sign;
+        animation-duration: 8s; 
+        animation-delay: 1.5s;
+    }
+
+    .logotype-i {
+        stroke: #fff;
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+
+        animation-name: draw-sign;
+        animation-duration: 8s; 
+        animation-delay: 2.5s;
+    }
+    .logotype-b {
+        stroke-dasharray: 500;
+        stroke-dashoffset: 0;
+
+        animation-name: draw-sign-rev;
+        animation-duration: 2s; 
+        animation-delay: 3s;
+    }
+
+    .logotype-as {
+        stroke-dasharray: 500;
+        stroke-dashoffset: 0;
+
+        animation-name: draw-sign-rev;
+        animation-duration: 3s; 
+        animation-delay: 3.5s;
+    }
+
+    .logotype-gro {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 0;
+
+        animation-name: draw-sign-gro;
+        animation-duration: 11s; 
+        animation-delay: 4.6s;
+    }
+
+    .logotype-w {
+        stroke-dasharray: 500;
+        stroke-dashoffset: 0;
+
+        animation-name: draw-sign-rev;
+        animation-duration: 1s; 
+        animation-delay: 5.3s;
+    }
+
+
+
+
+    @keyframes draw-sign {
+        0% {
+            stroke-dashoffset: 1000;
+            fill: transparent;
+        }
+        100% {
+
+            stroke-dashoffset: 100;
+            
+        }
+    }
+    @keyframes draw-sign-rev {
+        0% {
+            stroke: #fff;
+            stroke-dashoffset: 600;
+            fill: transparent;
+        }
+        100% {
+            stroke: #fff;
+            stroke-dashoffset: 1050;
+            
+        }
+    }
+    @keyframes draw-sign-gro {
+        0% {
+            stroke: #fff;
+            stroke-dashoffset: 1000;
+            fill: transparent;
+        }
+        100% {
+            stroke: #fff;
+            stroke-dashoffset: 100;
+            
+        }
+    }
+
+    </style>
+</defs>
+<title>Mike Basgrow - LOGO-HAND - art_01</title>
+    <g id="Basgrow_Path" data-name="Basgrow Path">
+        <path id="w" class="sing logotype-w" d="M306.64,168.23c2.62-16.13,7.35-21.61,16-30.87,8.05-8.67,17.64-15.94,31.29-17.5,23.75-3,35.75,14.91,35.75,33.33A35.66,35.66,0,0,1,356,188.8c-4,.21-11.67-1-13.37-2.35-1-.83-4.42-3.13-4.42-3.13-2.47.58-5.43,3.33-5.43,3.33s-2.91-3-2.91-6.66a4.34,4.34,0,0,1-3.66,3.91" transform="translate(-4.01 -116.53)"/>
+        <path id="gro" class="sing logotype-gro" d="M282.3,182.73c-4.78-3.93-7.69.94-7.69,2.46-.9,4,1.94,6.16,4.33,6.16,1.64,0,4.6-.71,4.52-7a3.24,3.24,0,0,1,3.63-3.15c2.75,43.4,2.44,68.74,5.43,68.74-7-35.5-4.92-69.17,1.63-69.62,5.44-1,5.93,9.83,10.88,11.16v-8.29c-2.66-1.52,8.81,12.49,11.23-.84,0,5.32,2.83,9.63,6.33,9.63,3.17-1.83,3.63-6.25,3.13-8.37,0-3.64-2.9-7.33-6.29-6.58-2.06.45-1.87,3.69-1.87,5.33" transform="translate(-4.01 -116.53)"/>
+        <path id="as" class="sing logotype-as" d="M266.6,190.64c2.36.44,5.88-1,4.34-4.84-5.15,0-9.31-2.63-9.31-5.87,3,0,4.22-.5,5,1.22,1.41,2.06-.56,3.94-4.41,5.09-5.56,4.13-11.44,3.79-12.48-7.71,0,3.43-3.9,11.86-8.29,12.79-1.69.36-3.86-2-4-4.94-.21-4.43,4.21-10.8,11.38-3.88" transform="translate(-4.01 -116.53)"/>
+        <path id="b" class="sing logotype-b" d="M170.72,206.69c3.83,18.58,79.08-21.17,61.83-33.33-14.17-10.08-42.47,8.12-51.67,16.67,20.75-13.62,60.38-46.54,48.25-57.67-18.42.56-48.49,32.52-69.37,69.88-13.51,24.16-20.42,49.11-27.12,74.22" transform="translate(-4.01 -116.53)"/></g><g id="Mike_Path" data-name="Mike Path">
+        <path id="mike" class="sing logotype-mike" d="M7,273.73C9.14,266,12,248.85,19.89,227c16.1-44.8,37.71-89.42,50.79-104.25C53,169.65,41.07,197.85,47.22,200.94c3.37,1.69,11.69-16.52,15.25-21.21-1.6,8.48-2.9,14.25-.2,16.46,4.77.41,5.65-8.74,9.83-13.4.19,8-1.84,7.72-1.27,12.8,1.36,1,3.8-4.67,6.8.8,1.18-4.08,5.13-16.72,8.75-32.28-3.42,14.7-4.76,18.72-5.89,22.56-.07.23,6.68-2.76,6.62-2.54-.24,1.23-7.91,3.31-8.45,3.31,7.59,2,6.36,5.21,13.18,5.21,5-.17,13.5-4.44,12.25-9.12-.18-.67-1.22-1.18-1.72-1.37-5-1.91-10.65,3.18-11,6.66a9.76,9.76,0,0,0,.15,3.54c2.18,4.65,16.53,9.06,27.11,3.85,7.5-3.55,27.29-16.24,40.52-25.81" transform="translate(-4.01 -116.53)"/>
+        <path id="i" class="sing logotype-i" d="M74.68,173.15c2.54-4.87,2.88-8.17,5.08-11.6" transform="translate(-4.01 -116.53)"/>
+    </g>
+</svg>
+<!-- Hi! This SVG animation is created by ArtskyStudio. Feel free to use it :) If you like this kind of animations and want to explore more check out my
+    fanpage https://www.facebook.com/artskyStudioWorkspace and like my page to motivate me to create more :) 
+ -->

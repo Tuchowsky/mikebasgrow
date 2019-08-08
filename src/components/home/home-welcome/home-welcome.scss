@@ -1,0 +1,59 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+.home-welcome {
+    position: relative;
+    z-index: -1;
+    height: 50%;
+    width: 100%;
+    display: flex;
+
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 40px;
+    background-color: $dark111;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    transition: all .5s;
+
+    &::before {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        content: "";
+        z-index: 1;
+        background-color: rgba($dark000, .65);
+    }
+}
+// background
+.mike-basgrow-story-image-wrapper {
+    position: absolute;
+    z-index: -10;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+
+    .story-switch {
+        height: 100%;
+        width: 100%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        transition: opacity 3s;
+ 
+    }
+
+    .image_00 {
+        transition: all 2.5s;
+    }
+    .image_01 {
+        transition: all 2.5s;
+    }
+
+}

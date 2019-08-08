@@ -1,0 +1,59 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+
+
+@mixin button {
+    box-sizing: border-box;
+    text-align: center;
+    transition: all .5s;
+    margin: 0 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.3rem;
+    @include no-tap();
+    cursor: pointer;
+}
+
+.back-btn {
+    @include button;
+    background-color: $main-accent-color;
+    text-transform: uppercase;
+    color: $whitefff;
+
+    &:hover {
+        background-color: $whitefff;
+        .back-btn_link {
+            color: $dark000;
+            padding: 1.2rem 2.15rem 1.2rem 2.15rem;
+            transition: all .6s ease-out;
+        }
+
+        .back-btn_icon {
+            display: none;
+        }
+    }
+
+    .back-btn_link {
+        display: block;
+        padding: 1.2rem 2.15rem 1.2rem 2.75rem;
+        text-decoration: none;
+        color: $whitefff;
+    }
+
+    .back-btn_icon {
+        position: absolute;
+        left: .5rem;
+        top: 1.6rem;
+        height: 1rem;
+        display: block;
+        transform: rotate(90deg);
+    }
+}
+
+.art_absolute {
+    position: fixed;
+    left: 0rem;
+    top: 3.4rem;
+    z-index: 2;
+}
